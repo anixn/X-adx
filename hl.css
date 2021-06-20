@@ -28,3 +28,16 @@
 .remark-code, .remark-inline-code {
    font-family: var(--code-font-family), FiraCode NF, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
  }
+
+
+.medium {
+   font-size: 75%   
+}
+
+.small {
+   font-size: 65%
+}
+
+.action {
+   background-color: #f2eecb;
+}
