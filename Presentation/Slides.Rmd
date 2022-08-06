@@ -1,0 +1,145 @@
+---
+title: "An Introduction of<br />'Geospatial Techniques'"
+subtitle: "🗺️ <br/>Lecture 01 - Course Handout"
+author: "**Dr. Ankit Deshmukh**"
+institute: "Pandit Deendayal Energy University, Gandhinagar"
+date: "25 July 2022"
+layout: true
+output:
+  xaringan::moon_reader:
+    css: ["css/default.css", "css/metropolis.css", "css/tachyons.min.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: solarized-light
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: 16:9
+---
+class: center middle inverse
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  #out.width = "100%",
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  fig.show = TRUE,
+  hiline = TRUE,
+  results= "asis" 
+)
+
+# Bibliography and Citation  
+library(RefManageR)
+library(bibtex)
+BibOptions(check.entries = FALSE, bib.style = "authoryear", style = "text", first.inits = FALSE)
+bib <- ReadBib("~/adx/Bibliography.bib")
+```
+
+```{r, echo=FALSE, include=TRUE}
+library(xaringanExtra)
+use_logo(image_url = "/css/Blog-Logo.png", link_url = "https://www.ankitdeshmukh.com/", width = "60px", height = "60px")
+
+use_progress_bar(color = "#282828",location = "top", height = "0.25em")
+use_tile_view()
+use_extra_styles(hover_code_line = TRUE, mute_unhighlighted_code = FALSE)
+```
+
+# Test slide Break
+
+---
+
+.pull-left[
+```{r, echo=FALSE}
+DiagrammeR::mermaid("
+graph LR
+B --> A
+C --> A
+D --> B
+", 
+width = "100%",
+height = "5%"
+)
+```
+]
+
+.pull-right[
+
+- Test line 1
+
+--
+
+- .f1[Test line 2]
+
+]
+
+---
+
+# Testing incrimental slides 
+
+Test 01
+
+--
+
+Test 022
+
+--
+
+Test 03
+
+---
+
+.pull-left[
+${1:Left}
+]
+
+.pull-right[
+${2:Right}
+]
+
+---
+# This is a smaple on Mermaid
+<center>
+
+```{r, echo=FALSE}
+DiagrammeR::mermaid("
+graph LR
+A --> B
+A --> C
+C --> B
+
+style A fill:#faf000;
+style B fill:#0ff
+", 
+height = "15%",
+width = "20%"
+)
+```
+
+---
+
+```{r, echo=FALSE}
+library(DiagrammeR)
+grViz("
+      digraph flowchart {
+      rankdir='TD'; bgcolor='#FAFAFA';
+      graph [fontname='helvetica']; edge [fontname='helvetica']; 
+      node [fontname='helvetica',shape=box, style='filled, rounded', fillcolor='#FBF1C7']; 
+      
+      # Draw your graph here
+      A -> D
+      B -> D
+      C -> D
+      E -> D
+      F -> D
+      
+      # declare the edges & style them
+      A [label = 'Random Text']
+      B [label = 'This is full', fillcolor='#FCD975']
+      C [label = 'Short answer: Markov chains']
+      D [label = 'ven longer answer', fillcolor='#B8BB26']
+      D [label = 'Climate change', shape=doublecircle]
+      }
+      ")
+```

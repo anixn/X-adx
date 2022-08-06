@@ -1,0 +1,119 @@
+snippet link
+	[${1:label}](${2:location})
+
+snippet img
+	![${1:label}](${2:location})
+
+snippet r
+	```{r ${1:label}, ${2:options}}
+	${0}
+	```
+snippet setup
+	---
+	title: "Basics of R Programming"
+	author: "Dr. Ankit Deshmukh"
+	date: 2021-09-25T22:40:24Z
+	categories: ["Programming"]
+	tags: ["R", "Coding"]
+	draft: true
+	local: true
+	---
+	
+	```{r setup, include=FALSE}
+	knitr::opts_chunk$set(message = FALSE, warning = FALSE,	collapse = TRUE
+	)
+	```
+
+snippet kimg
+	```{r, include=TRUE, echo=FALSE, fig.align='center'}
+	knitr::include_graphics("images/${1:img-path}", error = FALSE)
+	```
+
+snippet mark
+	<mark>${1:Your Text}</mark>
+
+snippet ref
+	\@ref(fig:${1:refId})
+	
+snippet citep
+	`${0:r} Citep(bib, "${1:Key}")`
+
+snippet citet
+	`${0:r} Citet(bib, "${1:Key}")`
+
+snippet fa
+	`${0:r} fontawesome::fa("${1:Key}", fill = "white")`
+
+snippet fax
+	`${0:r} fontawesome::fa("${1:Name}", fill = "${2:Color}", height = "${3:Line}em")`
+
+snippet quote
+	<div class="boxed" style="--width-var: ${1:a number}px;">
+	${2:A quote}
+	.right[~${3:Author}]
+	</div>
+
+snippet bib
+	exclude:true
+	# Reference 
+	```{r, echo=FALSE}
+	PrintBibliography(bib, .opts = list(bib.style = "alphabetic"))
+	```
+	
+snippet col2
+	.pull-left[
+	${1:Left}
+	]
+
+	.pull-right[
+	${2:Right}
+	]
+	
+snippet flowd
+	```{r, echo=FALSE}
+	library(DiagrammeR)
+	grViz("
+	      digraph flowchart {
+	      rankdir='TD'; bgcolor='#FAFAFA';
+	      graph [fontname='helvetica']; edge [fontname='helvetica']; 
+	      node [fontname='helvetica',shape=box, style='filled, rounded', fillcolor='#FBF1C7']; 
+	      
+	      # Draw your graph here
+	      A -> D
+	      B -> D
+	      C -> D
+	      E -> D
+	      F -> D
+	      
+	      # declare the edges & style them
+	      A [label = 'Random Text']
+	      B [label = 'This is full', fillcolor='#FCD975']
+	      C [label = 'Short answer: Markov chains']
+	      D [label = 'ven longer answer', fillcolor='#B8BB26']
+	      D [label = 'Climate change', shape=doublecircle]
+	      }
+	      ")
+	```
+
+snippet inv-slide
+	---
+	class: center inverse middle
+	.f1.bodoni[${1:Text}]
+	
+snippet himg
+	<img src="images/${1:Image}" class="w-20 br4 dib center">
+
+snippet L73a
+	<div class="flex"> <div class="w-70 pa2 mr1">
+	${1:Text}
+	</div> <div class="w-30 pa2 mr1">
+	${2:Text}
+	</div> </div>
+
+snippet L64
+	<div class="flex"> <div class="w-60 pa2 mr1">
+	${1:Text}
+	</div> <div class="w-40 pa2 mr1">
+	${2:Text}
+	</div> </div>
+	

@@ -1,0 +1,136 @@
+snippet fmt
+	# Title       :: ${1:File Title}------------------------------------------------
+	# Author      :: Ankit Deshmukh
+	# DOC         :: `r eval(Sys.Date())`
+	# DOLE        :: `r eval(Sys.time())`
+	# Description :: ${2:File Description}
+	
+	# setup ------------------------------------------------------------------------
+	graphics.off(); cat("\014")
+	setwd("`r eval(getwd())`")
+	
+	# libraries --------------------------------------------------------------------
+	library(tidyverse)
+
+	# code -------------------------------------------------------------------------
+
+
+snippet lib
+	library(${1:package})
+
+snippet req
+	require(${1:package})
+
+snippet src
+	source("${1:file.R}")
+
+snippet ret
+	return(${1:code})
+
+snippet mat
+	matrix(${1:data}, nrow = ${2:rows}, ncol = ${3:cols})
+
+snippet sg
+	setGeneric("${1:generic}", function(${2:x, ...}) {
+		standardGeneric("${1:generic}")
+	})
+
+snippet sm
+	setMethod("${1:generic}", ${2:class}, function(${2:x, ...}) {
+		${0}
+	})
+
+snippet sc
+	setClass("${1:Class}", slots = c(${2:name = "type"}))
+
+snippet if
+	if (${1:condition}) {
+		${0}
+	}
+
+snippet el
+	else {
+		${0}
+	}
+
+snippet ei
+	else if (${1:condition}) {
+		${0}
+	}
+
+snippet fun
+	${1:name} <- function(${2:variables}) {
+		${0}
+	}
+
+snippet for
+	for (${1:variable} in ${2:vector}) {
+		${0}
+	}
+
+snippet while
+	while (${1:condition}) {
+		${0}
+	}
+
+snippet switch
+	switch (${1:object},
+		${2:case} = ${3:action}
+	)
+
+snippet apply
+	apply(${1:array}, ${2:margin}, ${3:...})
+
+snippet lapply
+	lapply(${1:list}, ${2:function})
+
+snippet sapply
+	sapply(${1:list}, ${2:function})
+
+snippet mapply
+	mapply(${1:function}, ${2:...})
+
+snippet tapply
+	tapply(${1:vector}, ${2:index}, ${3:function})
+
+snippet vapply
+	vapply(${1:list}, ${2:function}, FUN.VALUE = ${3:type}, ${4:...})
+
+snippet rapply
+	rapply(${1:list}, ${2:function})
+
+snippet ts
+	`r paste("#", date(), "-----------------------------------------------------\n")`
+
+snippet rqr
+	if(!require(${1:packageName})){install.packages("${1:packageName}");library(${1:packageName})}
+
+snippet clear
+	rm(list = ls()); graphics.off();cat("\014")
+
+snippet pp
+	"`r gsub('"', "", gsub("\\\\", "/", readClipboard()))`"
+
+snippet clc
+	cat("\014")
+
+snippet rscon
+	if(!require(rsconnect)){install.packages("rsconnect");library(rsconnect)}
+	rsconnect::setAccountInfo(name='ankitdeshmukh',
+														token='2C060BB4F2E86B20488A374D0BC99974',
+														secret='toeA5885o77V5b+J/7BlaOE/3w/KjYLwrfGj6ZVF')
+
+	rsconnect::deployApp(getwd())
+
+snippet rc
+	file.edit("~/.Rprofile")
+
+snippet rsnip
+	file.edit(%appdata%/RStudio/snippets/r.snippets)
+
+snippet ggpt
+	ggplot(data = ${1:data}, aes(x = ${2:x-var}, y = ${3:y-var})) + 
+	    geom_point(shape = 21, color = "gray", fill = "white", size = 3, stroke = 2, alpha = 0.7) + 
+	    theme_minimal()
+
+
