@@ -70,7 +70,8 @@ snippet col2
 	]
 	
 snippet flowd
-	```{r, echo=FALSE}
+	<center>
+	```{r, echo=FALSE, out.height="50%"}
 	library(DiagrammeR)
 	grViz("
 	      digraph flowchart {
@@ -94,16 +95,17 @@ snippet flowd
 	      }
 	      ")
 	```
+	</center>
 
 snippet inv-slide
 	---
 	class: center inverse middle
-	.f1.bodoni[${1:Text}]
-	
+	.gold.f1[${1:Text}]
+
 snippet himg
 	<img src="images/${1:Image}" class="w-20 br4 dib center">
 
-snippet L73a
+snippet L73
 	<div class="flex"> <div class="w-70 pa2 mr1">
 	${1:Text}
 	</div> <div class="w-30 pa2 mr1">
@@ -117,3 +119,26 @@ snippet L64
 	${2:Text}
 	</div> </div>
 	
+snippet b1
+	○ 
+
+snippet b2
+	► 
+
+snippet b3
+	■ 
+	
+snippet qt
+	❝${1:Text}❞
+	
+snippet panel
+	.panelset[
+	<!-- panel 01 -->
+	.panel[.panel-name[${1:Panal Name}]
+	${3: Content}
+	]
+	<!-- panel 02 -->
+	.panel[.panel-name[${2:Panel Name}]
+	${4: Content}
+	]
+	]
